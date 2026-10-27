@@ -101,7 +101,11 @@ export default function Search() {
 
         {listings !== null && listings.length > 0 && view === 'map' && (
           <div className="mt-6">
-            <CityMap listings={listings} center={{ lat: Number(filters.lat), lng: Number(filters.lng) }} radiusKm={Number(filters.radiusKm)} onPick={(c) => { setFilters({ ...filters, lat: String(c.lat), lng: String(c.lng) }); load(); }} hovered={hovered} setHovered={setHovered} />
+            <CityMap listings={listings} center={{ lat: Number(filters.lat), lng: Number(filters.lng) }} radiusKm={Number(filters.radiusKm)} onPick={(c) => {
+              const next = { ...filters, lat: String(c.lat), lng: String(c.lng) };
+              setFilters(next);
+              load(next);
+            }} hovered={hovered} setHovered={setHovered} />
             <p className="mt-2 text-center text-xs text-slate-400">click the map to move the search center · hover pins for prices</p>
           </div>
         )}

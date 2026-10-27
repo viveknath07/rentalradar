@@ -169,3 +169,4 @@ Live links: backend — [add URL] · frontend — [add URL]
 - Email/WhatsApp alert delivery (SMTP pluggable).
 - Broker verification badges.
 - Rent-vs-area price intelligence charts.
+# mern-project
